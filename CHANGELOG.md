@@ -2,4 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/Designibl/Dibl-Flags/compare/v0.1.1...v0.1.2) (2024-02-06)
 
+
+### Bug Fixes
+
+* Adding in conventional commit linting ([79a8650](https://github.com/Designibl/Dibl-Flags/commit/79a86509ddd92213ce4a1fcd8adaf0356f6b11b4))
+* Adding release versioning ([71346b4](https://github.com/Designibl/Dibl-Flags/commit/71346b406c41ed6388a87aff81ca1a1711088779))
+
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.

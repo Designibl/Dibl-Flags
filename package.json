@@ -1,0 +1,73 @@
+{
+  "name": "dibl-flags",
+  "version": "0.2.24",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format-check": "bunx @biomejs/biome format --changed",
+    "format-apply": "bunx @biomejs/biome format --write --changed",
+    "lint": "biome lint ./src",
+    "start": "next start",
+    "postinstall": "husky",
+    "clean": "rm -rf node_modules",
+    "reset": "rm -rf node_modules && bun i",
+    "release": "standard-version"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --files-ignore-unknown=true",
+      "biome check --apply --no-errors-on-unmatched",
+      "biome check --apply --organize-imports-enabled=false --no-errors-on-unmatched",
+      "biome check --apply-unsafe --no-errors-on-unmatched",
+      "biome format --write --no-errors-on-unmatched",
+      "biome lint --apply --no-errors-on-unmatched"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.8.0",
+    "next": "^14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.17",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.34",
+    "standard-version": "^9.5.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.26.0"
+  }
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+lint-staged
+
+# bun test
+
+printf "\e[33m\n----------\nREMINDERS\n----------\n[ ] Run 'bun release'\n----------\n\n\e[0m"

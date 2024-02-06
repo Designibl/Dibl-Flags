@@ -1,7 +1,6 @@
 name: Code quality
 
 on:
-  push:
   pull_request:
 
 jobs:
@@ -21,5 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Bump package.json
-        run: npm run release && git push --follow-tags origin $(git branch)
+      - uses: oven-sh/setup-bun@v1
+      - name: Install
+        run: bun i
+      - name: Create Release
+        run: bun run release
+      - name: Commit release
+        run: git push --follow-tags origin $(git branch)

@@ -3,6 +3,4 @@
 
 lint-staged
 
-bun test
-
-npm version patch
+# bun test

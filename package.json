@@ -6,8 +6,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "format-check": "bunx @biomejs/biome format --changed",
+    "format-apply": "bunx @biomejs/biome format --write --changed",
     "lint": "biome lint ./src",
-    "format": "bunx @biomejs/biome format ./src",
     "start": "next start"
   },
   "dependencies": {

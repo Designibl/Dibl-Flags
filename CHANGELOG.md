@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.113](https://github.com/Designibl/Dibl-Flags/compare/v0.1.2...v0.1.113) (2024-02-06)
+
+
+### Bug Fixes
+
+* Changed the workflow to install dependencies and use bun ([32154e4](https://github.com/Designibl/Dibl-Flags/commit/32154e46cc9d7b1dc71877cc58e65bf58897368d))
+
 ### [0.1.112](https://github.com/Designibl/Dibl-Flags/compare/v0.1.2...v0.1.112) (2024-02-06)
 
 

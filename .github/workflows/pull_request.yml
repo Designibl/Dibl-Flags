@@ -15,15 +15,3 @@ jobs:
           version: latest
       - name: Run Biome
         run: biome ci .
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-      - name: Install
-        run: bun i
-      - name: Create Release
-        run: bun run release
-      - name: Commit release
-        run: git push --follow-tags origin $(git branch)

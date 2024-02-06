@@ -12,7 +12,8 @@
     "start": "next start",
     "postinstall": "husky",
     "clean": "rm -rf node_modules",
-    "reset": "rm -rf node_modules && bun i"
+    "reset": "rm -rf node_modules && bun i",
+    "release" : "standard-version"
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
@@ -53,6 +54,7 @@
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.34",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },

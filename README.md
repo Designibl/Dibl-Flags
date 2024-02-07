@@ -9,7 +9,7 @@ N.B. Can be easily adapted for any other Postgres database.
 ## Using This Repository
 
 This repository serves as example code that can be re-used in your own projects
-to set up feature flagging capabilities rather than paing out for a service.
+to set up feature flagging capabilities rather than paying out for a service.
 
 ## Features/Examples
 
@@ -26,7 +26,13 @@ to set up feature flagging capabilities rather than paing out for a service.
 
 ## Working On This Repository
 
-Either fork the repository or pull it locally.
+Either fork the repository or pull it and run locally.
+
+### Tech stack
+
+```mermaid
+
+```
 
 ### Environment Variables
 
@@ -39,7 +45,9 @@ New environment variables must be also configured in `./src/env.js`.
 
 ### Running Locally
 
-_N.B._ We are using `bun` as our javascript runtime which is different from `npm` or `yarn`. [Find out more](https://bun.sh/)
+This project is using [Bun](https://bun.sh/) as our javascript runtime which is different from `npm` or `yarn`.
+
+It is worth making sure your editor has the plugin for [Biome](https://biomejs.dev/). 
 
 #### First time setup install
 
@@ -69,7 +77,7 @@ We use the conventional commits standard to indicate version bumps.
 
 #### Versioning
 
-We use a library called [Standard-Version](https://github.com/conventional-changelog/standard-version)
+This project uses a library called [Standard-Version](https://github.com/conventional-changelog/standard-version)
 
 Run the release script:
 
@@ -87,9 +95,9 @@ This automatically:
 
 ### Deploying A Release
 
-We use Vercel for our builds and deployment.
+This project uses Vercel for the builds and deployment.
 
-Create a PR, then it will automatically generate a preview build and run our github actions.
+Create a PR, then it will automatically generate a preview build and run the github actions.
 
 On a successful PR merge to the `trunk` branch a production build will be kicked off.
 
@@ -101,8 +109,12 @@ If you are not familiar with the different technologies used in this project, pl
 
 This was originally setup with [T3 Stack](https://create.t3.gg/).
 
-- [Next.js](https://nextjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
+- [Bun](https://bun.sh/) for the javascript runtime.
+- [Next.js](https://nextjs.org) is the Meta framework used.
+- [TypeScript](https://www.typescriptlang.org/) for static type checking.
+- [Tailwind CSS](https://tailwindcss.com) for styling.
+- [Biome](https://biomejs.dev/) for linting and formatting.
+- [Zod](https://zod.dev/) for TypeScript-first schema validation with static type inference.
 
 ---
 

@@ -17,12 +17,7 @@
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome check --files-ignore-unknown=true",
-      "biome check --apply --no-errors-on-unmatched",
-      "biome check --apply --organize-imports-enabled=false --no-errors-on-unmatched",
-      "biome check --apply-unsafe --no-errors-on-unmatched",
-      "biome format --write --no-errors-on-unmatched",
-      "biome lint --apply --no-errors-on-unmatched"
+      "biome check --apply --no-errors-on-unmatched"
     ]
   },
   "husky": {
@@ -64,6 +59,7 @@
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.34",
     "standard-version": "^9.5.0",
+    "supabase": "^1.142.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },

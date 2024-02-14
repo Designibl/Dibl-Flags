@@ -22,7 +22,8 @@
 			".env.*",
 			"bun.lockb",
 			"public/*",
-			"*.md"
+			"*.md",
+			".husky/*"
 		]
 	},
 	"vcs": {

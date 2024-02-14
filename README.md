@@ -2,8 +2,6 @@
 
 Open Source Feature flag implementation examples on a Supabase backend.
 
-N.B. Can be easily adapted for any other Postgres database.
-
 ---
 
 ## Using This Repository
@@ -28,11 +26,33 @@ to set up feature flagging capabilities rather than paying out for a service.
 
 Either fork the repository or pull it and run locally.
 
-### Tech stack
+To re-create you will need:
+
+- A Vercel Account
+- A Supabase Account
+
+1. Connect Vercel to your fork repo and configure as needed.
+2. In Supabase make a project then optionally use Vercel integration to pass environment variables etc. between them.
+3. Pull environment variables locally and run migrations against the supabase project.
 
 ```mermaid
-
+---
+title: Example Deployment Flow
+---
+stateDiagram-v2
+    Github
+    Vercel
+    Project: Dibl Flags
+    Database: Supabase
+    
+    Github --> Vercel: Creates Build on PR
+    Vercel --> Project: Build per branch
+    Vercel --> Database: Database per branch (if enabled)
+    Project --> Database
+    Database --> Project
 ```
+
+N.B. Can be easily adapted for any other Postgres database and hosting solution.
 
 ### Environment Variables
 
@@ -62,6 +82,86 @@ Run the development server:
 ```bash
 bun dev
 ```
+
+#### Local Supabase
+
+[Official Docs](https://supabase.com/docs/guides/cli/getting-started?platform=npm)
+
+Having installed the local dependencies.
+
+##### Login to Supabase CLI & Link Project
+
+```bash
+supabase login
+```
+
+```bash
+supabase link --project-ref $PROJECT_ID
+```
+
+_N.B. Upon linking you will be prompted for your database password._
+
+##### Start Supabase
+
+Make sure Docker has been started e.g. using Docker Desktop.
+
+```bash
+supabase start
+```
+
+Apply any new migrations.
+
+```bash
+supabase db reset
+```
+
+##### Managing Database Types
+
+Keep your local types in sync with database changes.
+
+[Official Docs](https://supabase.com/docs/guides/database/api/generating-types)
+
+```bash
+supabase gen types typescript --local > src/types/supabase.ts
+```
+
+_N.B. This should be run after every new migration is applied & local supabase must be running first._
+
+##### Generate Database Migration
+
+Via diffing local studio changes.
+
+```bash
+supabase db diff -f EXAMPLE_FILENAME_SUFFIX
+```
+
+##### Create Blank Database Migration
+
+```bash
+supabase migration new EXAMPLE_FILENAME_SUFFIX
+```
+
+This runs a full local supabase setup in docker and studio on `http://localhost:54323`.
+
+##### Seed Data
+
+[Official Docs](https://supabase.com/docs/guides/cli/seeding-your-database)
+
+Local development will be much easier with data to use and this is where seeding comes into.
+
+Supabase Seeding is generally all done in `supabase/seed.sql`.
+
+##### Stop Supabase
+
+```bash
+supabase stop
+```
+
+##### Database Branching [Optional]
+
+:warning: This feature of Supabase is in early alpha and requires a pro plan/ incurs cost.
+
+[Official Docs](https://supabase.com/docs/guides/platform/branching#preparing-your-git-repository)
 
 ### Committing Code
 

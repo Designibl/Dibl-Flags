@@ -59,10 +59,12 @@
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.34",
     "standard-version": "^9.5.0",
-    "supabase": "^1.142.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
+  "trustedDependencies": [
+    "supabase"
+  ],
   "ct3aMetadata": {
     "initVersion": "7.26.0"
   }

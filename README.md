@@ -67,7 +67,7 @@ New environment variables must be also configured in `./src/env.js`.
 
 This project is using [Bun](https://bun.sh/) as our javascript runtime which is different from `npm` or `yarn`.
 
-It is worth making sure your editor has the plugin for [Biome](https://biomejs.dev/). 
+It is worth making sure your editor has the plugin for [Biome](https://biomejs.dev/).
 
 #### First time setup install
 
@@ -86,6 +86,14 @@ bun dev
 #### Local Supabase
 
 [Official Docs](https://supabase.com/docs/guides/cli/getting-started?platform=npm)
+
+Install the Supabase CLI
+
+```bash
+brew install supabase/tap/supabase
+```
+
+N.B. I am using homebrew rather than the bun version of supabase. If using bun remember to put `bunx` at the start of the commands below.
 
 Having installed the local dependencies.
 
